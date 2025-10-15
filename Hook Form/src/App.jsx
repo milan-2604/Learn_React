@@ -18,23 +18,25 @@ function App() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
             <label >firstName: </label>
-            <input {...register('firstName',{
+            <input className={errors.firstName?"input-err": ""}
+             {...register('firstName',{
               required: true,
               minLength :{value:3,message:"Min len should be 3"},
               maxLength: {value: 6,message: "Max len should be 6"}
             })} />
-            {errors.firstName&&<p>{errors.firstName.message}</p>}
+            {errors.firstName&&<p className='err'>{errors.firstName.message}</p>}
           </div>
           <div>
             <label>lastName: </label>
-            <input {...register('lastName',
+            <input className={errors.lastName?"input-err": ""}
+             {...register('lastName',
               {
                 required: true,
                 minLength: {value:3,message: "minLength should be 3"},
                 maxLength: {value: 6, message: "Max len should be 6"}
               })
             } />
-            {errors.lastName&&<p>{errors.lastName.message}</p>}
+            {errors.lastName&&<p className='err'>{errors.lastName.message}</p>}
           </div>
           <button type='submit' disabled={isSubmitting}>Submit</button>
         </form>

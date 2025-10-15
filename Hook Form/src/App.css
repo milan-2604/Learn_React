@@ -4,7 +4,14 @@
   padding: 2rem;
   text-align: center;
 }
+.input-err{
 
+  border: 2px red solid;
+  box-shadow: 2px 2px 0 2px red;
+}
+.err{
+  color: red;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
